@@ -25,7 +25,6 @@ export const StateContextProvider = ({ children }) => {
                     form.image,
                 ],
             });
-            console.log('passed', data);
         } catch (error) {
             console.log('faield', error);
         }

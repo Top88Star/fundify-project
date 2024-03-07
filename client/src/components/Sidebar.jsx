@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { logo, sun } from '../assets';
 import { navlinks } from '../constants';
+import { useDisconnect } from "@thirdweb-dev/react";
 
 const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
   <div className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#2c2f32]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
@@ -17,6 +18,8 @@ const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
 const Sidebar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState('dashboard');
+  const [isLoading, setIsLoading] = useState(false);
+  const disconnect = useDisconnect();
 
   return (
     <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">
@@ -33,6 +36,12 @@ const Sidebar = () => {
               isActive={isActive}
               handleClick={() => {
                 if (!link.disabled) {
+                  if (link.name === 'logout') {
+                    setIsLoading(true);
+                    disconnect();
+                    navigate('/');
+                    setIsLoading(false);
+                  }
                   setIsActive(link.name);
                   navigate(link.link);
                 }
