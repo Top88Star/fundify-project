@@ -28,18 +28,3 @@ To run Fundify locally and explore its features, follow these steps:
 3. Start the development server with `npm start`.
 4. Ensure you have Metamask or another Ethereum wallet installed to interact with the blockchain features.
 
-## Contributing
-
-### We welcome contributions from the community to enhance Fundify and make it even more robust and user-friendly. To contribute, follow these steps:
-
-1. Fork this repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and ensure they adhere to the project's coding standards.
-4. Test your changes thoroughly.
-5. Submit a pull request detailing the changes you've made and their purpose.
-
-## Support
-
-If you encounter any issues while using Fundify or have any questions, feel free to [open an issue](https://github.com/yourusername/fundify/issues) on the GitHub repository. Our team will be happy to assist you.
-
-Let's make dreams come true together with Fundify! 🚀
